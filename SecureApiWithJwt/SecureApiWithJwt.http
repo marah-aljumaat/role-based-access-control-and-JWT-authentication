@@ -1,0 +1,17 @@
+@SecureApiWithJwt_HostAddress = http://localhost:5056
+
+POST {{SecureApiWithJwt_HostAddress}}/auth/login
+Content-Type: application/json 
+
+{
+  "username": "user",
+  "password": "user123"
+}
+
+###
+GET {{SecureApiWithJwt_HostAddress}}/values/admin 
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbiIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluIiwianRpIjoiOGZkYWZjZDgtMGFjYS00NzAzLWFhNzYtZmMzNjQ2YzcyZDZiIiwiZXhwIjoxNzkxNDkwMzEzLCJpc3MiOiJTZWN1cmVBcGkiLCJhdWQiOiJTZWN1cmVBcGlVc2VycyJ9.g2EoX8Wn6FeedWqemOOlQqbzKaJIf5t48CtXfaPaFGU
+
+###
+GET {{SecureApiWithJwt_HostAddress}}/values/user 
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c2VyIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiVXNlciIsImp0aSI6ImUxMjc0NjFlLTQwNDYtNGVlOC1iMmJlLTgxMDFiMWRlZWYyYSIsImV4cCI6MTc5MTQ5MDM1OSwiaXNzIjoiU2VjdXJlQXBpIiwiYXVkIjoiU2VjdXJlQXBpVXNlcnMifQ.BvwDo5hzsyRoyBlSxj7-mklCUX7_Kmx2C0GuzU02DmQ
