@@ -1,0 +1,23 @@
+@JwtAuthExample_HostAddress = http://localhost:5235
+
+POST {{JwtAuthExample_HostAddress}}/api/auth/login 
+Content-Type: application/json 
+
+{
+  "username": "user1",
+  "password": "password1"
+}
+
+###
+GET {{JwtAuthExample_HostAddress}}/api/secure
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6InVzZXIxIiwibmJmIjoxNzkxNDk1MTI0LCJleHAiOjE3OTE0OTUyNDQsImlhdCI6MTc5MTQ5NTEyNH0.XPB6uA7trZOM5sq9PmYb1S_XJ_CDki4ty5hRCi3hhVM
+
+###
+POST {{JwtAuthExample_HostAddress}}/api/auth/refresh 
+Content-Type: application/json 
+
+{
+  "username": "user1",
+  "password": "password1",
+  "refreshToken" : "e70ddef5-e9dc-49d2-a50c-75e1b5477fc3"
+}
